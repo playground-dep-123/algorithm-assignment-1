@@ -6,15 +6,18 @@ public class Algo_7 {
 
      
         boolean validFlag=false;
+        String[] arr;
         
         String sentence=" ";
 
          do{
             System.out.print("Enter a Senetence:");
             sentence=scanner.nextLine().strip();
-            if(sentence.isBlank())
+            arr=new String[sentence.length()];
+            arr=sentence.split(" ");
+            if(sentence.isBlank()|| arr.length<2)
             {
-                System.out.println("There are no any word Try Again");
+                System.out.println("Invalid Sentence");
                 validFlag=true;
             }
             else{
@@ -30,8 +33,7 @@ public class Algo_7 {
        String shoretestWord=" ";
        int min=50;
         
-        String[] arr=new String[sentence.length()];
-        arr=sentence.split(" ");
+   
 
          for (int i = 0; i < arr.length; i++) {
                if(arr[i].length()>max)
