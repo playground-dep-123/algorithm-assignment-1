@@ -5,62 +5,47 @@ import java.util.Scanner;
 public class Algo_5 {
     private static final Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
-       
-        char[] word;
+    
         String wordTemp="";
         boolean validFlag=false;
-        String convertingString=" ";
-
-        
+        char[] charArray;
+        char[] reversedArray;
       
-        // do{
-        //     System.out.print("Enter a ASCII Value:");
-        //     wordTemp=scanner.nextLine().strip();
-        //     if(wordTemp.isBlank())
-        //     {
-        //         System.out.println("Try Valid Number");
-        //         validFlag=true;
-        //     }
-        //     else{
-        //         validFlag=false;
-        //     }
+
+        do{
+            System.out.print("Enter a ASCII Value:");
+            wordTemp=scanner.nextLine().strip();
+            if(wordTemp.isBlank())
+            {
+                System.out.println("Try Valid Number");
+                validFlag=true;
+            }
+            else{
+                validFlag=false;
+            }
             
          
-        // }while(validFlag);
+        }while(validFlag);
 
-        wordTemp="56";
+       
+        charArray=wordTemp.toCharArray();
+        reversedArray=new char[wordTemp.length()];
+       
 
-        word=wordTemp.toCharArray();
-        
-        char[]tempArray=new char[word.length];
-        for (int j = 0,k=word.length-1; j < word.length; j++,k--) {
-
-
-            tempArray[j]=word[k];
+        for (int i = 0,k=charArray.length-1; i < charArray.length; i++,k--) {
+            reversedArray[i]=charArray[k];
         }
-        word=tempArray;
 
-       char num;
-       String[] num2=new String[word.length];
-       
-       for (int i = 0; i < word.length; i++) {
-       
-           num2[i]=word[i]+" ";
-          
+        for (int i = 0; i < reversedArray.length; i++) {
+            System.out.printf("%s ",reversedArray[i]);
+            
+        }
+        System.out.println();
         
-       }
 
 
-       for (int i = 0; i < num2.length; i++) {
 
-        convertingString.concat(num2[i]).strip();
-        
-       }
-
-       
-
-
-      System.out.println(Arrays.toString(num2));
+    
 
        
 
