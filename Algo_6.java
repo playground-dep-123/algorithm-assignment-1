@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Algo_6 {
@@ -15,7 +14,8 @@ public class Algo_6 {
         do{
             System.out.print("Enter a Sentence: ");
             wordTemp=scanner.nextLine().strip();
-            if(wordTemp.isBlank())
+            strArray=wordTemp.split(" ");
+            if(wordTemp.isBlank()||strArray.length<2)
             {
                 System.out.println("Try Valid Sentence");
                 validFlag=true;
@@ -28,7 +28,7 @@ public class Algo_6 {
         }while(validFlag);
 
        
-        strArray=wordTemp.split(" ");
+       
         reversedArray=new String[strArray.length];
 
        
